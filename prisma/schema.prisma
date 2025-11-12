@@ -13,6 +13,7 @@ model Customer {
   email   String  @unique
   phone   String?
   orders  Order[]
+  password String 
 }
 
 model Product {
