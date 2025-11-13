@@ -3,6 +3,7 @@ import * as customerControllers from "../controllers/customerControllers.ts";
 import * as productsControllers from "../controllers/productControllers.ts"
 import * as orderControllers from "../controllers/orderControllers.ts"
 import * as registerControllers from "../controllers/registerControllers.ts"
+import * as loginControllers from "../controllers/loginControllers.ts"
 
 
 const router = Router(); // экземпляр роутера
@@ -31,6 +32,9 @@ router.delete("/deleteOrder", orderControllers.deleteOrder)
 
 
 
-// Register
+// Register LOgin
 router.post("/register", registerControllers.default)
+router.post("/login", loginControllers.login)
+
+
 export default router;
