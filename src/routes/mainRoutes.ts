@@ -2,6 +2,8 @@ import { Router } from "express";
 import * as customerControllers from "../controllers/customerControllers.ts";
 import * as productsControllers from "../controllers/productControllers.ts"
 import * as orderControllers from "../controllers/orderControllers.ts"
+import * as registerControllers from "../controllers/registerControllers.ts"
+
 
 const router = Router(); // экземпляр роутера
 // Customers
@@ -28,4 +30,7 @@ router.put("/updateOrder", orderControllers.updataOrder)
 router.delete("/deleteOrder", orderControllers.deleteOrder)
 
 
+
+// Register
+router.post("/register", registerControllers.default)
 export default router;

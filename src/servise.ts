@@ -3,6 +3,7 @@ import cors from "cors";
 import router from "./routes/mainRoutes.ts";
 
 
+
 const app = express();
 app.use(express.json()); // чтоб мог работать с json
 app.use(cors({origin: "http://localhost:5173"}))

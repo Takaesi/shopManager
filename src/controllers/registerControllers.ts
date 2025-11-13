@@ -1,11 +1,13 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
 import { prisma } from "../database.ts";
+import { type Request, type Response } from "express";
 
 
 const router = Router();
 
-router.post("/register", async  (req, res) => {
+const addRegister = async (req: Request, res: Response) => {
+    console.log("Получен запрос на регистрацию:", req.body)
     const {name, email,  password} = req.body;
 
     if (!name || !email || !password) {
@@ -21,4 +23,6 @@ router.post("/register", async  (req, res) => {
         }
     })
     res.status(201).json({message: "Пользователь успешно зарегистрирован"});
-})
+}
+
+export default addRegister;
